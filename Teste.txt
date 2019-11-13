@@ -1,0 +1,325 @@
+﻿#include "stdio.h"
+#include "math.h"
+#include "windows.h"
+#include "time.h"
+#include "stdlib.h"
+#include "conio.h"
+#include "string.h"
+#include "locale.h"
+
+
+void limpabuffer();
+
+void CabecalhoInicial();
+
+void Cadastros();
+
+void CadastroFuncionario();
+
+void CadastroPizza();
+
+void Pedidos();
+
+void CadastroCupom();
+
+void CadastroBebida();
+
+void CadastroCliente();
+
+void Estoque();
+
+void PedidoCliente();
+
+void Entregas();
+
+void VerPedido();
+
+void CancelarPedido();
+
+void teste();
+
+
+int ponteiroLogin;
+int main()
+{
+	setlocale(LC_ALL, "Portuguese");
+	system("title Pizzaria do Zeh");
+	system("color F9");
+
+	//system("MODE con cols=168 lines=100");
+	/*keybd_event(VK_MENU, 0x36, 0, 0);
+	keybd_event(VK_RETURN, 0x1C, 0, 0);
+	keybd_event(VK_RETURN, 0x1C, KEYEVENTF_KEYUP, 0);
+	keybd_event(VK_MENU, 0x38, KEYEVENTF_KEYUP, 0);*/
+
+	CabecalhoInicial();
+
+	printf("Hora:%s \n", __TIME__);
+
+
+	int opcao;
+	int loginAdmin = 1020;
+	int senhaAdmin = 1020;
+	int loginFunc = 1010;
+	int senhaFunc = 1010;
+
+
+	int ponteiroSenha;
+
+
+	printf("Entre com o usuario: ");
+	scanf("%i", &ponteiroLogin);
+
+	printf("Entre com a senha: ");
+	scanf("%i", &ponteiroSenha);
+
+	if (ponteiroLogin == loginAdmin && ponteiroSenha == senhaAdmin)
+	{
+		system("cls");
+		system("title Pizzaria do Zeh: opcao");
+
+		printf("  ================================================================================================\n");
+		printf("||                              Pizzaria do Zeh Usuario: %i                                      ||\n", ponteiroLogin);
+		printf("  ================================================================================================\n");
+
+		printf("1 - Cadastros.\n");
+		printf("2 - Pedidos.\n");
+		printf("3 - Estoque.\n");
+		printf("4 - Entregas.\n");
+
+		printf("Entre com a opção desejada: \n");
+		scanf("%d", &opcao);
+
+		switch (opcao)
+		{
+		case 1: Cadastros(); break;
+		case 2: Pedidos(); break;
+		case 3: Estoque(); break;
+		case 4: Entregas(); break;
+		default: main();
+		}
+
+	}
+
+	else if (ponteiroLogin == loginFunc && ponteiroSenha == senhaFunc)
+	{
+
+		system("cls");
+		system("title Pizzaria do Zeh: opcao");
+
+		printf("  ================================================================================================\n");
+		printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+		printf("  ================================================================================================\n");
+
+		printf("1 - Cadastro de Cliente.\n");
+		printf("2 - Pedido.\n");
+
+		printf("Entre com a opcao desejada: \n");
+		scanf("%d", &opcao);
+
+		switch (opcao)
+		{
+		case 1: CadastroCliente(); break;
+		case 2: PedidoCliente(); break;
+		default: teste();
+		}
+	}
+
+	else
+	{
+		printf("Login ou usuario errado\n");
+	}
+
+
+	system("cls");
+	printf("Obrigado por usar Pizzaria do Zeh \n");
+
+	system("pause");
+	return 0;
+}
+
+void limpabuffer()
+{
+	char c;
+	while ((c = getchar()) != '\n' && c != EOF);
+}
+
+void CabecalhoInicial()
+{
+	printf("  ================================================================================================\n");
+	printf("||                          Seja bem-vindo a Pizzaria do Zeh                                      ||\n");
+	printf("  ================================================================================================\n");
+
+}
+
+void Cadastros()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de funcionario");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+
+	printf("Em construcao cadastro de funcionario \n");
+	system("pause");
+
+}
+
+void Pedidos()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de funcionario");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+
+	printf("Em construcao cadastro de funcionario \n");
+	system("pause");
+
+}
+
+void Entregas()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de funcionario");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+
+	printf("Em construcao cadastro de funcionario \n");
+	system("pause");
+
+}
+
+void CadastroFuncionario()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de funcionario");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+
+	printf("Em construcao cadastro de funcionario \n");
+	system("pause");
+
+}
+
+void CadastroPizza()
+{
+	system("cls");
+	system("title Pizzaria do Zeh: Pizza");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao cadastro de pizza \n");
+	system("pause");
+
+}
+
+void CadastroCupom()
+{
+	system("cls");
+	system("title Pizzaria do Zeh: Cupom");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao de cupom \n");
+	system("pause");
+
+}
+
+void Estoque()
+{
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao do estoque \n");
+	system("pause");
+
+}
+
+void CadastroBebida()
+{
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de bebida");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao cadastro de bebida \n");
+	system("pause");
+
+}
+
+void CadastroCliente()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de cliente");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao cadastro de cliente \n");
+	system("pause");
+}
+
+void PedidoCliente()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Cadastro de pedido");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao pedido de cliente \n");
+	system("pause");
+}
+
+void VerPedido()
+{
+
+	system("cls");
+	system("title Pizzaria do Zeh: Ver pedido");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao ver pedido \n");
+	system("pause");
+
+}
+
+void CancelarPedido()
+{
+	system("cls");
+	system("title Pizzaria do Zeh: Cancelar pedido");
+
+	printf("  ================================================================================================\n");
+	printf("||                              Pizzaria do Zeh Usuário: %i                                        ||\n", ponteiroLogin);
+	printf("  ================================================================================================\n");
+	printf("Em construcao cancelar pedido \n");
+	system("pause");
+
+}
+
+void teste()
+{
+	system("cls");
+	printf("Em construcao TESTE \n");
+	system("pause");
+}

@@ -1,0 +1,117 @@
+#include <stdio.h>
+
+int main() {
+	int cod, produto, cont, pagamento;
+	float troco, conta, dinheiro, valor, cpf;
+	cod = 0;
+	produto = 0;
+	dinheiro = 0;
+	conta = 0;
+	troco = 0;
+	cpf = 0;
+
+	do {
+		printf("\n\n");
+		printf("           LANCHONETE HIPOTETICA\n");
+		printf("      --------------------------------\n");
+		printf("       Especificações  Código   Valor\n");
+		printf("      --------------------------------\n");
+		printf("        Cachoro quente| 100 |R$ 1,20\n");
+		printf("        Bauru Simples | 101 |R$ 1,30\n");
+		printf("        Bauru c/ovo   | 102 |R$ 1,50\n");
+		printf("        Hamburguer    | 103 |R$ 1,20\n");
+		printf("        Cheeseburguer | 104 |R$ 1,30\n");
+		printf("        Refrigerante  | 105 |R$ 1,00\n");
+		printf("      --------------------------------\n");
+		printf("\nOlá!");
+		do {
+			printf("\n\nInforme o código do lanche selecionado:");
+			scanf("%d", &cod);
+
+			while (cod != 100 && cod != 101 && cod != 102 && cod != 103 &&
+				cod != 104 && cod != 105) {
+				printf("\nInforme um código válido:");
+				scanf("%d", &cod);
+			}
+			switch (cod) {
+			case 100:
+				printf("\n\nVocê selecionou Cachorro Quente.\n");
+				valor = 1.20;
+				break;
+
+			case 101:
+				printf("\n\nVocê selecionou Bauru Simples.\n");
+				valor = 1.30;
+				break;
+
+			case 102:
+				printf("\n\nVocê selecionou Bauro c/ovo.\n");
+				valor = 1.50;
+				break;
+
+			case 103:
+				printf("\n\nVocê selecionou Hamburguer.\n");
+				valor = 1.20;
+				break;
+
+			case 104:
+				printf("\n\nVocê selecionou Cheeseburguer.\n");
+				valor = 1.30;
+				break;
+
+			case 105:
+				printf("\n\nVoc? selecionou Refrigerante.\n");
+				valor = 1.00;
+				break;
+			}
+			printf("\nInforme a quantidade:");
+			scanf("%d", &produto);
+			while (produto <= 0) {
+				printf(
+					"\nQuantidade inválidade\nInforme uma quantidade válida:");
+				scanf("%d", &produto);
+			}
+			printf("\nValor: %.2f", produto * valor);
+			conta = conta + valor * produto;
+			printf(
+				"\n\nDeseja registrar outro lanche [1] para sim e [2] para "
+				"não:");
+			scanf("%d", &cont);
+
+		} while (cont == 1);
+		printf("\n\nFim da compra.\n");
+		printf("\n(contendo 9 números, sem pontos)\n\nInforme o CPF:");
+		scanf("%f", &cpf);
+		printf("\nValor total da compra R$%.2f reais\n", conta);
+		printf(
+			"\nQual a forma de pagamento [1] para debito [2] para crédito "
+			"[3] para dinheiro:");
+		scanf("%d", &pagamento);
+
+		if (pagamento == 1) {
+			printf("\nDébito selecionado\n\n");
+		}
+		else if (pagamento == 2) {
+			printf("\nCrédito selecionado\n\n");
+		}
+		else if (pagamento == 3) {
+			printf("\nDinheiro selecionado\n\n");
+			printf("\nInforme o valor dado pelo cliente: R$");
+			scanf("%f", &dinheiro);
+			while (dinheiro < conta) {
+				printf("\nValor informado está a baixo do valor "
+					"total!\nInforme um valor válido para o pagamento da "
+					"conta: R$");
+				scanf("%f", &dinheiro);
+			}
+			troco = dinheiro - conta;
+			printf("Seu troco é %.2f reais\n\n", troco);
+		}
+		printf("\n\nObrigado pela pagamento!\n\n");
+		printf(
+			"\nDeseja registrar outra compra? [1] para sim [0] para "
+			"finalizar:");
+		scanf("%d", &cont);
+	} while (cont == 1);
+	printf("\nFim do programa");
+}
